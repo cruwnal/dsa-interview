@@ -1,0 +1,24 @@
+import java.util.Arrays; // You must import this!
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {3, 4, 5, 8, 9, 11, 15, 17, 14};
+        int target = 14;
+        int k = 5;
+
+        Arrays.sort(arr);
+
+        List<Integer> list = new ArrayList<>();
+        for (int i : arr) {
+            list.add(i);
+        }
+
+        list.sort(Comparator.comparingInt(a -> Math.abs(a - target)));
+
+        for (int i = 1; i <= k; i++) {
+            System.out.println(list.get(i));
+        }
+    }
+    
+    
+}
